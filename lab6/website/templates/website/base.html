@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'website/css/base.css' %}">
+</head>
+<body>
+    <header class="jumbotron text-center">
+        <h1>Welcome to Programação Web</h1>
+        <p>Python and Django Life.</p>
+
+        <nav>
+            <a href="{% url 'home' %}" class="btn btn-info">Home</a>
+            <a href="{% url 'about' %}" class="btn btn-info">About</a>
+            <a href="{% url 'view' %}" class="btn btn-info">View</a>
+        </nav>
+    </header>
+
+    <article class="container">
+        <main class="col-sm-6">
+            {% block main %}
+
+            {% endblock %}
+        </main>
+
+        <aside class="col-sm-6">
+            <img src="{% static 'website/images/imagem.png' %}">
+        </aside>
+    </article>
+
+    <footer>
+        <p>Programação Web é a base da programação na web.</p>
+    </footer>
+</body>
+</html>
